@@ -7,10 +7,12 @@
         "php": ">=8.0.2",
         "ext-ctype": "*",
         "ext-iconv": "*",
-        "doctrine/annotations": "^1.0",
+        "doctrine/annotations": "^1.13",
         "doctrine/doctrine-bundle": "^2.6",
+        "doctrine/doctrine-fixtures-bundle": "^3.4",
         "doctrine/doctrine-migrations-bundle": "^3.2",
         "doctrine/orm": "^2.11",
+        "fzaninotto/faker": "^1.5",
         "phpdocumentor/reflection-docblock": "^5.3",
         "phpstan/phpdoc-parser": "^1.4",
         "sensio/framework-extra-bundle": "^6.1",
@@ -25,6 +27,7 @@
         "symfony/http-client": "6.0.*",
         "symfony/intl": "6.0.*",
         "symfony/mailer": "6.0.*",
+        "symfony/maker-bundle": "^1.38",
         "symfony/mime": "6.0.*",
         "symfony/monolog-bundle": "^3.0",
         "symfony/notifier": "6.0.*",
@@ -99,7 +102,6 @@
     },
     "require-dev": {
         "symfony/debug-bundle": "6.0.*",
-        "symfony/maker-bundle": "^1.0",
         "symfony/stopwatch": "6.0.*",
         "symfony/web-profiler-bundle": "6.0.*"
     }

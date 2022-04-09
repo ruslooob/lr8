@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Screenshot{% endblock %}
+
+{% block body %}
+    <div class="wrapper text-muted">
+        {% for screenshot in screenshots %}
+            <div class="screenshot">
+                <p>{{ screenshot.id }}</p>
+                <p>{{ screenshot.uploadDate|date("d-m-Y H:i:s") }}</p>
+                <p>{{ screenshot.uuid }}</p>
+                <p>{{ screenshot.pathToSource }}</p>
+                <p>{{ screenshot.extension }}</p>
+                <p>{{ screenshot.description }}</p>
+                <br>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
