@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Современные новости{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="detail-information text-center">
+            <img height="60%" width="90%" src="{{ asset('images/fedora-desktop.png') }}" alt=""/>
+            {#            <h1 class="detail-information__author">Автор: {{ screenshot.login }}</h1> #}
+            <h1 class="detail-information__header">{{ screenshot.description }}</h1>
+            <span class="detail-information__content">Дата загрузки: {{ screenshot.uploadDate|date("d-m-Y H:i:s") }}</span>
+        </div>
+    </div>
+{% endblock %}

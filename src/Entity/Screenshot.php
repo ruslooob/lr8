@@ -35,7 +35,7 @@ class Screenshot
     #[ORM\JoinColumn(nullable: false)]
     private User $user;
 
-    #[ORM\OneToMany(mappedBy: 'ЫScreenshot', targetEntity: Like::class)]
+    #[ORM\OneToMany(mappedBy: 'screenshot', targetEntity: Like::class)]
     private Collection $likes;
 
     public function __construct()

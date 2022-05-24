@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Repository\LikeRepository;
+use DateTimeImmutable;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: LikeRepository::class)]
@@ -15,10 +16,13 @@ class Like
     private int $id;
 
     #[ORM\ManyToOne(targetEntity: User::class, inversedBy: 'likes')]
-    private User $User;
+    private User $user;
 
     #[ORM\ManyToOne(targetEntity: Screenshot::class, inversedBy: 'likes')]
-    private Screenshot $Screenshot;
+    private Screenshot $screenshot;
+
+    #[ORM\Column(type: 'datetime_immutable')]
+    private DateTimeImmutable $createdAt;
 
     public function getId(): ?int
     {
@@ -27,24 +31,36 @@ class Like
 
     public function getUser(): ?User
     {
-        return $this->User;
+        return $this->user;
     }
 
-    public function setUser(?User $User): self
+    public function setUser(?User $user): self
     {
-        $this->User = $User;
+        $this->user = $user;
 
         return $this;
     }
 
     public function getScreenshot(): ?Screenshot
     {
-        return $this->Screenshot;
+        return $this->screenshot;
     }
 
-    public function setScreenshot(?Screenshot $Screenshot): self
+    public function setScreenshot(?Screenshot $screenshot): self
     {
-        $this->Screenshot = $Screenshot;
+        $this->screenshot = $screenshot;
+
+        return $this;
+    }
+
+    public function getCreatedAt(): DateTimeImmutable
+    {
+        return $this->createdAt;
+    }
+
+    public function setCreatedAt(DateTimeImmutable $createdAt): self
+    {
+        $this->createdAt = $createdAt;
 
         return $this;
     }

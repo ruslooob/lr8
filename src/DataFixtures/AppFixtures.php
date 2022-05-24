@@ -7,6 +7,7 @@ use App\Entity\User;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 use Faker\Factory;
+use Ramsey\Uuid\Nonstandard\Uuid;
 
 class AppFixtures extends Fixture
 {
@@ -49,7 +50,7 @@ class AppFixtures extends Fixture
         $screenshot->setDescription($generator->unique()->text(100));
         $screenshot->setExtension($generator->text(8));
         $screenshot->setPathToSource($generator->unique()->url);
-        $screenshot->setUuid(uniqid());
+        $screenshot->setUuid(str_replace("\\", "", Uuid::uuid4()));
         $screenshot->setUploadDate($generator->dateTime);
         return $screenshot;
     }

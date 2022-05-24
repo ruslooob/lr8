@@ -1,0 +1,9 @@
+<div class="text-center screenshot w-50">
+    <a href="{{ path('screenshot_detail', {'id': screenshot.id}) }}">
+        <p>Дата добавления: {{ screenshot.uploadDate|date("d-m-Y H:i:s") }}</p>
+        {#    <p>{{ screenshot.extension }}</p> #}
+        <img height="60%" width="90%" src="{{ asset('images/fedora-desktop.png') }}" alt=""/>
+        <p>{{ screenshot.description }}</p>
+        <br>
+    </a>
+</div>
